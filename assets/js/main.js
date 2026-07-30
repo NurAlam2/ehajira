@@ -185,6 +185,16 @@
     });
   });
 
+  // Safety net: forcibly remove/hide Google's translate banner if it ever slips through
+  function killGoogleBanner() {
+    document.body.style.top = '0px';
+    const frame = document.querySelector('iframe.goog-te-banner-frame, #goog-te-banner-frame');
+    if (frame) { frame.style.display = 'none'; frame.style.visibility = 'hidden'; frame.style.height = '0'; }
+  }
+  const eBannerObserver = new MutationObserver(killGoogleBanner);
+  eBannerObserver.observe(document.body, { childList: true, subtree: false });
+  setInterval(killGoogleBanner, 800);
+
   // ===== Book a Demo form (client-side only — connect to your backend/email service) =====
   const eDemoForm = document.getElementById('eDemoForm');
   const eDemoSuccess = document.getElementById('eDemoSuccess');
