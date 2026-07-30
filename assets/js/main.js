@@ -98,7 +98,7 @@
 
   // ===== Pricing: monthly/yearly + currency (combined) =====
   const ePricingToggle = document.getElementById('ePricingToggle');
-  const CURRENCY_RATES = { BDT: 1, USD: 1 / 110, SAR: 1 / 29.3 }; // approximate rates, for display only
+  const CURRENCY_RATES = { BDT: 1, AED: 1 / 30, SAR: 1 / 29.3 }; // approximate rates, for display only
   let currentBilling = 'monthly';
   let currentCurrency = 'BDT';
   let currentSymbol = '৳';
