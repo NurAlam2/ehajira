@@ -42,11 +42,47 @@
                                 <li class="nav-item"><a class="nav-link e-nav-link" href="#about">About</a></li>
                                 <li class="nav-item"><a class="nav-link e-nav-link" href="#features">Features</a></li>
                                 <li class="nav-item"><a class="nav-link e-nav-link" href="#pricing">Pricing</a></li>
-                                <li class="nav-item"><a class="nav-link e-nav-link" href="#">Blog</a></li>
+                                <li class="nav-item"><a class="nav-link e-nav-link" href="./contact.html">Contact</a>
+                                </li>
                             </ul>
 
                             <div class="d-flex align-items-center gap-2 ms-auto">
-                                <a href="contact.html" class="e-btn-demo d-none d-md-inline-flex">
+
+                                <div class="dropdown e-mini-dropdown d-none d-xl-block">
+                                    <button class="e-mini-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <i class="bi bi-globe2"></i><span class="e-lang-label">EN</span>
+                                    </button>
+                                    <ul class="dropdown-menu e-mini-menu">
+                                        <li><a class="dropdown-item e-lang-opt active" href="#" data-lang="en"
+                                                data-label="EN">English</a>
+                                        </li>
+                                        <li><a class="dropdown-item e-lang-opt" href="#" data-lang="bn"
+                                                data-label="BN">বাংলা</a></li>
+                                        <li><a class="dropdown-item e-lang-opt" href="#" data-lang="ar"
+                                                data-label="AR">العربية</a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="dropdown e-mini-dropdown d-none d-xl-block">
+                                    <button class="e-mini-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                        <span class="e-curr-symbol">৳</span><span class="e-curr-label">BDT</span>
+                                    </button>
+                                    <ul class="dropdown-menu e-mini-menu">
+                                        <li><a class="dropdown-item e-curr-opt active" href="#" data-currency="BDT"
+                                                data-symbol="৳">৳
+                                                BDT</a></li>
+                                        <li><a class="dropdown-item e-curr-opt" href="#" data-currency="USD"
+                                                data-symbol="$">$ USD</a></li>
+                                        <li><a class="dropdown-item e-curr-opt" href="#" data-currency="SAR"
+                                                data-symbol="&#65020;">&#65020;
+                                                SAR</a></li>
+                                    </ul>
+                                </div>
+
+                                <button type="button" class="e-btn-demo d-none d-md-inline-flex" data-bs-toggle="modal"
+                                    data-bs-target="#eDemoModal">
                                     Book Demo
                                     <span class="icon-circle">
                                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +90,7 @@
                                                 stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </span>
-                                </a>
+                                </button>
 
                                 <button class="e-toggler" type="button" data-bs-toggle="offcanvas"
                                     data-bs-target="#eOffcanvas" aria-controls="eOffcanvas" aria-label="Open menu">
@@ -107,49 +143,111 @@
         <section class="e-contact">
             <div class="container">
 
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8">
-                        <div class="e-contact-head">
-                            <span class="e-clients-badge">Contact</span>
-                            <h2 class="mt-3">We'd Love To Hear From You</h2>
-                            <p>No forms, no hassle - just reach out directly using any of the details below.</p>
-                        </div>
-                    </div>
-                </div>
+
 
                 <div class="row g-4 justify-content-center">
 
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <div class="e-contact-card">
-                            <div class="e-contact-icon">
-                                <i class="bi bi-geo-alt-fill"></i>
-                            </div>
-                            <h3>Our Address</h3>
-                            <p>House 45, Road 27, Banani,<br>Dhaka-1213, Bangladesh</p>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-5">
                         <div class="e-contact-card">
                             <div class="e-contact-icon">
                                 <i class="bi bi-envelope-fill"></i>
                             </div>
                             <h3>Email Us</h3>
                             <a href="mailto:support@ehajira.com" class="plain">support@ehajira.com</a>
-                            <p>We usually reply within a few hours.</p>
                         </div>
                     </div>
 
-                    <div class="col-12 col-md-6 col-lg-4">
+                    <div class="col-12 col-md-6 col-lg-5">
                         <div class="e-contact-card">
                             <div class="e-contact-icon">
                                 <i class="bi bi-telephone-fill"></i>
                             </div>
                             <h3>Call Us</h3>
                             <a href="tel:+8801711000000" class="e-call-btn">
+                                +880 1711-000000
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="e-contact-head mt-5 mb-4">
+                            <span class="e-clients-badge">Our Offices</span>
+                            <h2 class="mt-3">Visit Us Around The World</h2>
+                            <p>Reach out to the office nearest you — we're happy to help wherever you are.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="e-contact-card">
+                            <div class="e-contact-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <h3>Dhaka, Bangladesh</h3>
+                            <p>Joypurhat Tower, Level-06, Block F, Main Road, Dhaka-1219</p>
+                            <a href="tel:+8801711000000" class="e-call-btn">
                                 <i class="bi bi-telephone"></i> +880 1711-000000
                             </a>
                             <br>
+                            <a href="https://wa.me/8801711000000" target="_blank" rel="noopener" class="e-whatsapp-btn">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="e-contact-card">
+                            <div class="e-contact-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <h3>Chattogram, Bangladesh</h3>
+                            <p>GEC Circle, Khulshi, Chattogram-4000</p>
+                            <a href="tel:+8801711000001" class="e-call-btn">
+                                <i class="bi bi-telephone"></i> +880 1711-000001
+                            </a>
+                            <br>
+                            <a href="https://wa.me/8801711000001" target="_blank" rel="noopener" class="e-whatsapp-btn">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="e-contact-card">
+                            <div class="e-contact-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <h3>New York, USA</h3>
+                            <p>47 Macdonough St, Apt 01, Brooklyn, NY 11216</p>
+                            <a href="tel:+19179609979" class="e-call-btn">
+                                <i class="bi bi-telephone"></i> +1 (917) 960-9979
+                            </a>
+                            <br>
+                            <a href="https://wa.me/19179609979" target="_blank" rel="noopener" class="e-whatsapp-btn">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="e-contact-card">
+                            <div class="e-contact-icon">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <h3>Riyadh, KSA</h3>
+                            <p>4194 Bir Al Mahallat, Al Wisham, Riyadh 12741, Saudi Arabia</p>
+                            <a href="tel:+966531382220" class="e-call-btn">
+                                <i class="bi bi-telephone"></i> +966 53 138 2220
+                            </a>
+                            <br>
+                            <a href="https://wa.me/966531382220" target="_blank" rel="noopener" class="e-whatsapp-btn">
+                                <i class="bi bi-whatsapp"></i> WhatsApp
+                            </a>
                         </div>
                     </div>
 
@@ -229,6 +327,62 @@
 
                     </div>
 
+
+                    <div class="e-offices-wrap">
+                        <div class="e-offices-title">Our Offices</div>
+                        <div class="row g-3">
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="e-office-box">
+                                    <div class="e-office-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <h4>Dhaka, Bangladesh</h4>
+                                    <p>Joypurhat Tower, Level-06, Block F, Main Road, Dhaka-1219</p>
+                                    <a href="https://wa.me/8801711000000" target="_blank" rel="noopener"
+                                        class="e-office-whatsapp">
+                                        <i class="bi bi-whatsapp"></i> +880 1711-000000
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="e-office-box">
+                                    <div class="e-office-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <h4>Chattogram, Bangladesh</h4>
+                                    <p>GEC Circle, Khulshi, Chattogram-4000</p>
+                                    <a href="https://wa.me/8801711000001" target="_blank" rel="noopener"
+                                        class="e-office-whatsapp">
+                                        <i class="bi bi-whatsapp"></i> +880 1711-000001
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="e-office-box">
+                                    <div class="e-office-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <h4>Dubai, UAE</h4>
+                                    <p>47 Macdonough St, Apt 01, Brooklyn, NY 11216</p>
+                                    <a href="https://wa.me/19179609979" target="_blank" rel="noopener"
+                                        class="e-office-whatsapp">
+                                        <i class="bi bi-whatsapp"></i> +1 (917) 960-9979
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-sm-6 col-lg-3">
+                                <div class="e-office-box">
+                                    <div class="e-office-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                    <h4>Riyadh, KSA</h4>
+                                    <p>4194 Bir Al Mahallat, Al Wisham, Riyadh 12741, Saudi Arabia</p>
+                                    <a href="https://wa.me/966531382220" target="_blank" rel="noopener"
+                                        class="e-office-whatsapp">
+                                        <i class="bi bi-whatsapp"></i> +966 53 138 2220
+                                    </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                     <div class="e-footer-bottom">
                         <span class="copy"><span class="lang-bn">E-হাজিরা</span> 2026 &copy; All rights reserved</span>
                         <div class="links">
@@ -275,26 +429,52 @@
     <div class="offcanvas offcanvas-end e-offcanvas" tabindex="-1" id="eOffcanvas" aria-labelledby="eOffcanvasLabel">
         <div class="offcanvas-header">
             <span class="e-logo" id="eOffcanvasLabel">
-                <span class="e-logo-mark">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="9" stroke="white" stroke-width="1.8" />
-                        <path d="M12 7v5l3.2 2" stroke="white" stroke-width="1.8" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                    </svg>
-                </span>
-                <span class="lang-bn">E-হাজিরা</span>
+                <img src="./assets/img/e-hajira-logo.png" alt="">
             </span>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
+
+            <div class="e-offcanvas-utils">
+                <div class="dropdown e-mini-dropdown">
+                    <button class="e-mini-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <i class="bi bi-globe2"></i><span class="e-lang-label">EN</span>
+                    </button>
+                    <ul class="dropdown-menu e-mini-menu">
+                        <li><a class="dropdown-item e-lang-opt active" href="#" data-lang="en"
+                                data-label="EN">English</a></li>
+                        <li><a class="dropdown-item e-lang-opt" href="#" data-lang="bn" data-label="BN">বাংলা</a></li>
+                        <li><a class="dropdown-item e-lang-opt" href="#" data-lang="ar" data-label="AR">العربية</a></li>
+                    </ul>
+                </div>
+
+                <div class="dropdown e-mini-dropdown">
+                    <button class="e-mini-btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <span class="e-curr-symbol">৳</span><span class="e-curr-label">BDT</span>
+                    </button>
+                    <ul class="dropdown-menu e-mini-menu">
+                        <li><a class="dropdown-item e-curr-opt active" href="#" data-currency="BDT" data-symbol="৳">৳
+                                BDT</a></li>
+                        <li><a class="dropdown-item e-curr-opt" href="#" data-currency="USD" data-symbol="$">$ USD</a>
+                        </li>
+                        <li><a class="dropdown-item e-curr-opt" href="#" data-currency="SAR"
+                                data-symbol="&#65020;">&#65020; SAR</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
             <ul class="navbar-nav gap-1">
-                <li class="nav-item"><a class="nav-link e-nav-link" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link e-nav-link" href="#">About</a></li>
-                <li class="nav-item"><a class="nav-link e-nav-link" href="#">Features</a></li>
-                <li class="nav-item"><a class="nav-link e-nav-link" href="#">Pricing</a></li>
-                <li class="nav-item"><a class="nav-link e-nav-link" href="#">Blog</a></li>
+                <li class="nav-item"><a class="nav-link e-nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link e-nav-link" href="#about">About</a></li>
+                <li class="nav-item"><a class="nav-link e-nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link e-nav-link" href="#pricing">Pricing</a></li>
+                <li class="nav-item"><a class="nav-link e-nav-link" href="./contact.html">Contact</a></li>
             </ul>
-            <a href="#" class="e-btn-demo justify-content-center mt-4">
+            <button type="button" class="e-btn-demo justify-content-center mt-4" data-bs-toggle="modal"
+                data-bs-target="#eDemoModal" data-bs-dismiss="offcanvas">
                 Book Demo
                 <span class="icon-circle">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -302,17 +482,156 @@
                             stroke-linejoin="round" />
                     </svg>
                 </span>
-            </a>
+            </button>
         </div>
     </div>
 
 
+    <!-- ===== Book a Demo Modal ===== -->
+    <div class="modal fade" id="eDemoModal" tabindex="-1" aria-labelledby="eDemoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content e-demo-modal-content">
+                <div class="modal-header e-demo-modal-header">
+                    <h5 class="modal-title" id="eDemoModalLabel">
+                        Book A Free Demo
+                        <small>Takes less than a minute — no obligation.</small>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
+                    <form id="eDemoForm" class="e-demo-form">
+                        <div class="mb-3">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="Your name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="+880 1XXX-XXXXXX" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Email Address</label>
+                            <input type="email" class="form-control" placeholder="you@company.com" required>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label">Company Name</label>
+                            <input type="text" class="form-control" placeholder="Your company (optional)">
+                        </div>
+
+                        <button type="submit" class="e-btn-primary w-100 justify-content-center">
+                            Request Demo
+                            <span class="icon-circle">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 17L17 7M17 7H8M17 7V16" stroke="#fff" stroke-width="2.4"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </button>
+                    </form>
+
+                    <div id="eDemoSuccess" class="text-center py-4 d-none">
+                        <i class="bi bi-check-circle-fill" style="font-size:2.6rem;"></i>
+                        <h5 class="mt-3 mb-1">Thank You!</h5>
+                        <p class="text-secondary mb-0">We've received your request and will contact you shortly to
+                            schedule your
+                            demo.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
+
+    <div id="whatsapp-chat" class="whatsapp-chat">
+        <div class="whatsapp-chat-header">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp"
+                class="whatsapp-icon">
+            <span>Chat with us</span>
+            <button id="close-whatsapp" class="close-btn">×</button>
+        </div>
+        <div class="whatsapp-chat-body">
+            <div class="chat-message">
+                <p>Hi! How can we help you?</p>
+            </div>
+            <div class="chat-input">
+                <input type="text" id="whatsapp-message" placeholder="Type your message...">
+                <button id="send-whatsapp" class="send-btn">Send</button>
+            </div>
+        </div>
+    </div>
+    <div id="whatsapp-button" class="whatsapp-floating-button" style="display: flex;">
+        <svg viewBox="0 0 24 24" width="28" height="28">
+            <path fill="currentColor"
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.386">
+            </path>
+        </svg>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const whatsappButton = document.getElementById('whatsapp-button');
+            const whatsappChat = document.getElementById('whatsapp-chat');
+            const closeBtn = document.getElementById('close-whatsapp');
+            const sendBtn = document.getElementById('send-whatsapp');
+            const messageInput = document.getElementById('whatsapp-message');
+
+            const whatsappNumber = '8801700000000';
+
+            // Toggle chat window
+            whatsappButton.addEventListener('click', function () {
+                whatsappChat.classList.toggle('show');
+                whatsappButton.style.display = whatsappChat.classList.contains('show') ? 'none' : 'flex';
+
+                if (whatsappChat.classList.contains('show')) {
+                    setTimeout(() => messageInput.focus(), 300);
+                }
+            });
+
+            // Close chat window
+            closeBtn.addEventListener('click', function () {
+                whatsappChat.classList.remove('show');
+                whatsappButton.style.display = 'flex';
+            });
+
+            // Send message to WhatsApp
+            function sendMessage() {
+                const message = messageInput.value.trim();
+                if (message) {
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, '_blank');
+                    messageInput.value = '';
+                    whatsappChat.classList.remove('show');
+                    whatsappButton.style.display = 'flex';
+                }
+            }
+
+            sendBtn.addEventListener('click', sendMessage);
+
+            messageInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+        });
+    </script>
+
+
+    <!-- Google Translate (hidden — driven by our custom language dropdown) -->
+    <div id="google_translate_element" style="display:none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,bn,ar',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 
     <!-- Vendor JS Files -->
@@ -322,44 +641,7 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
-    <script>
-        const headerEl = document.querySelector('.e-header');
-        const headerWrap = document.querySelector('.e-header-wrap');
-        const STICKY_THRESHOLD = 40;
 
-        function updateSticky() {
-            const shouldStick = window.scrollY > STICKY_THRESHOLD;
-            headerEl.classList.toggle('is-stuck', shouldStick);
-            if (shouldStick) {
-                document.body.style.paddingTop = headerWrap.offsetHeight + 'px';
-            } else {
-                document.body.style.paddingTop = '';
-            }
-        }
-
-        window.addEventListener('scroll', updateSticky);
-        window.addEventListener('resize', updateSticky);
-        updateSticky();
-
-
-        // Video modal: load the YouTube embed only when opened, remove it on close so playback stops
-        const eVideoModal = document.getElementById('eVideoModal');
-        const eVideoFrame = document.getElementById('eVideoFrame');
-
-        eVideoModal.addEventListener('shown.bs.modal', function () {
-            eVideoFrame.src = eVideoFrame.getAttribute('data-src') + '&autoplay=1';
-        });
-
-        eVideoModal.addEventListener('hidden.bs.modal', function () {
-            eVideoFrame.src = '';
-        });
-
-
-
-
-
-
-    </script>
 
 </body>
 
