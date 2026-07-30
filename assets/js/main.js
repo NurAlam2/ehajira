@@ -1,17 +1,39 @@
-/**
-* Template Name: Arsha
-* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
-* Updated: Feb 22 2025 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+
 
 (function () {
   "use strict";
 
 
 
+  const headerEl = document.querySelector('.e-header');
+  const headerWrap = document.querySelector('.e-header-wrap');
+  const STICKY_THRESHOLD = 40;
 
+  function updateSticky() {
+    const shouldStick = window.scrollY > STICKY_THRESHOLD;
+    headerEl.classList.toggle('is-stuck', shouldStick);
+    if (shouldStick) {
+      document.body.style.paddingTop = headerWrap.offsetHeight + 'px';
+    } else {
+      document.body.style.paddingTop = '';
+    }
+  }
+
+  window.addEventListener('scroll', updateSticky);
+  window.addEventListener('resize', updateSticky);
+  updateSticky();
+
+  // Video modal: load the YouTube embed only when opened, remove it on close so playback stops
+  const eVideoModal = document.getElementById('eVideoModal');
+  const eVideoFrame = document.getElementById('eVideoFrame');
+
+  eVideoModal.addEventListener('shown.bs.modal', function () {
+    eVideoFrame.src = eVideoFrame.getAttribute('data-src') + '&autoplay=1';
+  });
+
+  eVideoModal.addEventListener('hidden.bs.modal', function () {
+    eVideoFrame.src = '';
+  });
 
 
 
@@ -73,31 +95,118 @@
   document.addEventListener('DOMContentLoaded', aosInit);
 
 
-  // Pricing monthly / yearly toggle
+
+  // ===== Pricing: monthly/yearly + currency (combined) =====
   const ePricingToggle = document.getElementById('ePricingToggle');
+  const CURRENCY_RATES = { BDT: 1, USD: 1 / 110, SAR: 1 / 29.3 }; // approximate rates, for display only
+  let currentBilling = 'monthly';
+  let currentCurrency = 'BDT';
+  let currentSymbol = '৳';
+
+  function refreshPrices() {
+    document.querySelectorAll('.e-price-value').forEach(function (el) {
+      const raw = el.getAttribute('data-' + currentBilling);
+      if (!raw) return;
+      const bdtNumber = parseFloat(raw.replace(/,/g, ''));
+      const converted = Math.round(bdtNumber * CURRENCY_RATES[currentCurrency]);
+      el.textContent = converted.toLocaleString('en-US');
+    });
+    document.querySelectorAll('.e-price-currency').forEach(function (el) {
+      el.textContent = currentSymbol;
+    });
+  }
+
   if (ePricingToggle) {
     const toggleBtns = ePricingToggle.querySelectorAll('.e-toggle-btn');
-    const priceValues = document.querySelectorAll('.e-price-value');
     const billedNotes = document.querySelectorAll('.e-price-billed-note');
 
     toggleBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
-        const billing = btn.getAttribute('data-billing');
-
+        currentBilling = btn.getAttribute('data-billing');
         toggleBtns.forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
 
-        priceValues.forEach(function (el) {
-          el.textContent = el.getAttribute('data-' + billing);
+        billedNotes.forEach(function (el) {
+          el.textContent = el.getAttribute('data-' + currentBilling + '-note');
         });
 
-        billedNotes.forEach(function (el) {
-          el.textContent = el.getAttribute('data-' + billing + '-note');
-        });
+        refreshPrices();
       });
     });
   }
 
+  // ===== Currency dropdown (header + offcanvas, synced) =====
+  document.querySelectorAll('.e-curr-opt').forEach(function (opt) {
+    opt.addEventListener('click', function (e) {
+      e.preventDefault();
+      currentCurrency = opt.getAttribute('data-currency');
+      currentSymbol = opt.getAttribute('data-symbol');
+
+      document.querySelectorAll('.e-curr-opt').forEach(function (o) {
+        o.classList.toggle('active', o.getAttribute('data-currency') === currentCurrency);
+      });
+      document.querySelectorAll('.e-curr-label').forEach(function (el) {
+        el.textContent = currentCurrency;
+      });
+      document.querySelectorAll('.e-curr-symbol').forEach(function (el) {
+        el.innerHTML = currentSymbol;
+      });
+
+      refreshPrices();
+    });
+  });
+
+  // ===== Language dropdown (drives hidden Google Translate widget) =====
+  function triggerGoogleTranslate(lang) {
+    const combo = document.querySelector('.goog-te-combo');
+    if (combo) {
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+    } else {
+      // Google Translate script may still be loading — retry briefly
+      setTimeout(function () { triggerGoogleTranslate(lang); }, 400);
+    }
+  }
+
+  document.querySelectorAll('.e-lang-opt').forEach(function (opt) {
+    opt.addEventListener('click', function (e) {
+      e.preventDefault();
+      const lang = opt.getAttribute('data-lang');
+      const label = opt.getAttribute('data-label');
+
+      document.querySelectorAll('.e-lang-opt').forEach(function (o) {
+        o.classList.toggle('active', o.getAttribute('data-lang') === lang);
+      });
+      document.querySelectorAll('.e-lang-label').forEach(function (el) {
+        el.textContent = label;
+      });
+
+      triggerGoogleTranslate(lang === 'en' ? 'en' : lang);
+    });
+  });
+
+  // ===== Book a Demo form (client-side only — connect to your backend/email service) =====
+  const eDemoForm = document.getElementById('eDemoForm');
+  const eDemoSuccess = document.getElementById('eDemoSuccess');
+  const eDemoModalEl = document.getElementById('eDemoModal');
+
+  if (eDemoForm) {
+    eDemoForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      eDemoForm.classList.add('d-none');
+      eDemoSuccess.classList.remove('d-none');
+    });
+  }
+
+  if (eDemoModalEl) {
+    eDemoModalEl.addEventListener('hidden.bs.modal', function () {
+      setTimeout(function () {
+        eDemoForm.reset();
+        eDemoForm.classList.remove('d-none');
+        eDemoSuccess.classList.add('d-none');
+      }, 200);
+    });
+  }
 
   /**
    * Init swiper sliders
