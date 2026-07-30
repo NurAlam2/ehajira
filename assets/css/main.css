@@ -2181,12 +2181,18 @@
   }
 
   /* Hide default Google Translate UI, keep only our custom dropdown */
-  body{ top:0 !important; position:static !important; }
-  .goog-te-banner-frame.skiptranslate,
-  #goog-gt-tt, .goog-te-balloon-frame{ display:none !important; }
-  .goog-text-highlight{ background:none !important; box-shadow:none !important; }
-  .goog-te-gadget{ height:0; overflow:hidden; font-size:0 !important; }
-  .goog-te-gadget img{ display:none !important; }
+html{ top:0 !important; }
+body{ top:0 !important; position:static !important; }
+#goog-te-banner-frame,
+iframe.goog-te-banner-frame,
+.goog-te-banner-frame,
+.goog-te-banner-frame.skiptranslate,
+#goog-gt-tt, .goog-te-balloon-frame{
+  display:none !important;
+  visibility:hidden !important;
+  height:0 !important;
+}
+body > .skiptranslate{ display:none !important; }
 
   /* ===== Book a Demo modal ===== */
   .e-demo-modal-content{
@@ -2524,3 +2530,4 @@
   @media (max-width: 575.98px){
     .e-offices-wrap{ margin-top:32px; padding-top:26px; }
   }
+
